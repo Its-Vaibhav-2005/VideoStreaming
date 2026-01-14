@@ -46,7 +46,11 @@ app.get('/', (req, res)=>{
     res.json({msg:"Video Streaming Server is Running"});
 })
 
-
+app.post("/upload", upload.single("file"),(req, res)=>{
+    res.json({
+        msg: "File Uploaded Successfully"
+    })
+})
 
 app.listen(8000, ()=>{
     console.log("Server Started: http://localhost:8000");
